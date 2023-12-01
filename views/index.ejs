@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <h1>Del's shop</h1>
+    <p>All items</p>
+    <div class="allProducts">
+    <% for(let i=0; i<products.length; i++){%>
+        <%let product = products[i]%>
+        <div class="product">
+            <a href="/products/<%= i %>"><img src="<%= product.img %>" alt=""></a>
+            <a href="/products/<%= i %>"><h3><%= product.name%></h3></a>
+            <p><%= product.price%></p>
+            <p><%= product.type%></p>
+        </div>
+    <%}%>
+    </div>
+</body>
+</html>

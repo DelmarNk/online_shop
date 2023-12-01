@@ -4,7 +4,8 @@ const router = express.Router()
 const products = require('../models/products_model')
 
 router.get('/', (req,res)=>{
-    res.send(products)
+    const data = {products: products}
+    res.render('index.ejs', data)
 })
 
 router.get('/:id', (req,res)=>{
