@@ -10,6 +10,10 @@ const productsController =require('./controllers/products_controller')
 
 app.use('/products', productsController)
 
+app.get('/*',(req,res)=>{
+    const data = {error: req.error}
+    res.status(404).render('404', data)
+})
 
 
 app.listen(PORT,()=>{
